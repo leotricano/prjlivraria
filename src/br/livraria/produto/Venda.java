@@ -61,7 +61,9 @@ public class Venda {
         this.valorTotal = valorTotal;
     }
 
-    
+    public void Vender(){
+
+    }
     public void imprimirRecibo(){
         System.out.println("--- Recibo ---");
         System.out.println("Cliente: " + this.cliente.getNomeCliente());

@@ -15,6 +15,46 @@ public class Funcionario {
     private int matricula;
     private double salario;
     private Funcao funcao;
-    
-    
+
+    public Funcionario() {
+    }
+
+    public Funcionario(String nome, Funcao funcao, double salario, int matricula) {
+        this.nome = nome;
+        this.funcao = funcao;
+        this.salario = salario;
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public Funcao getFuncao() {
+        return funcao;
+    }
+
+    public void setFuncao(Funcao funcao) {
+        this.funcao = funcao;
+    }
 }

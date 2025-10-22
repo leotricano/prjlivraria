@@ -44,6 +44,7 @@ public class Livraria {
     public void cadastrarProduto(Produto produto){
         this.produto.add(produto);
     }
+
     public void listarProdutos(){
         System.out.println("-----Produtos no Estoque--------");
         if(this.produto.isEmpty()){
@@ -62,13 +63,25 @@ public class Livraria {
         this.venda.add(venda);
     }
     
-    public void ImprimirLoja(){
+    public void imprimirLoja(){
         System.out.println("------- Informações da Livraria --------");
         System.out.println("Endereço da loja: " + enderecoLoja);
         System.out.println("Endereço da cep: " + cepLoja);
     }
-    
-    
+    public Produto buscarProduto(String nomeBuscado){
+        for(Produto p: produto){
+            if(p.getNome() == nomeBuscado){
+                return p;
+            }
+
+        }
+        return null;
+    }
+    public void vender(){
+        if(produto.isEmpty()){
+            System.out.println("");
+        }
+    }
     
     
     
