@@ -12,7 +12,7 @@ public class Livro extends Produto {
     private String autor, editora;
     private int numeroPaginas;
 
-    public Livro(String nome, double preco, int codigoDeBarras, int id,
+    public Livro(String nome, double preco, String codigoDeBarras, String id,
             int qtdEstoque, String autor, String editora, int numeroPaginas) {
         super(nome, preco, codigoDeBarras, id, qtdEstoque);
         this.autor = autor;

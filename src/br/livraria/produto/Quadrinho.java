@@ -11,7 +11,7 @@ package br.livraria.produto;
 public class Quadrinho extends Livro {
     
 
-    public Quadrinho(String nome, double preco, int codigoDeBarras, int id, int qtdEstoque, String autor, String editora, int numeroPaginas) {
+    public Quadrinho(String nome, double preco, String codigoDeBarras, String id, int qtdEstoque, String autor, String editora, int numeroPaginas) {
         super(nome, preco, codigoDeBarras, id, qtdEstoque, autor, editora, numeroPaginas);
     }
 

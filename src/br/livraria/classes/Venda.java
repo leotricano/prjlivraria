@@ -2,9 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.livraria.produto;
+package br.livraria.classes;
 
-import br.livraria.classes.Cliente;
 import br.livraria.produto.Produto;
 import java.util.ArrayList;
 import java.util.Date;
@@ -62,6 +61,7 @@ public class Venda {
     }
 
     public void Vender(){
+
 
     }
     public void imprimirRecibo(){

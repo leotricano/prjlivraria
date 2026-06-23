@@ -4,9 +4,7 @@
  */
 package br.livraria.classes;
 
-import br.livraria.produto.Livro;
 import br.livraria.produto.Produto;
-import br.livraria.produto.Venda;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -21,6 +19,7 @@ public class Livraria {
     private ArrayList<Produto> produto;
     private ArrayList<Cliente> cliente;
     private ArrayList<Venda> venda;
+
    
 
     public Livraria(String enderecoLoja, int cepLoja) {
@@ -32,7 +31,7 @@ public class Livraria {
         this.venda = new ArrayList<>();
 
     }
-
+//---------------------------------Getters e Setters ----------------------------------------------------------------
     public String getEnderecoLoja() {
         return enderecoLoja;
     }
@@ -44,9 +43,18 @@ public class Livraria {
     public void cadastrarProduto(Produto produto){
         this.produto.add(produto);
     }
-
+//-------------------------------------------------------------------------------------------------------------------------
+public void imprimirLoja(){
+    System.out.println("------- Informações da Livraria --------");
+    System.out.println("Endereço da loja: " + enderecoLoja);
+    System.out.println("Endereço da cep: " + cepLoja);
+}
+    public void cadastrarCliente(Cliente cliente){
+        this.cliente.add(cliente);
+    }
+ //--------------------------------Produto---------------------------------------------------------------------------
     public void listarProdutos(){
-        System.out.println("-----Produtos no Estoque--------");
+        System.out.println("-------------------------Produtos no Estoque-------------------------------");
         if(this.produto.isEmpty()){
             System.out.println("Estoque vazio");
         }else{
@@ -54,34 +62,31 @@ public class Livraria {
                 System.out.println(p);
             }
         }
-        System.out.println("-----------------------------------");
+        System.out.println("-------------------------------------------------------------------------");
     }
-    public void cadastrarCliente(Cliente cliente){
-        this.cliente.add(cliente);
-    }
+
+
     public void cadastrarVenda(Venda venda){
         this.venda.add(venda);
     }
     
-    public void imprimirLoja(){
-        System.out.println("------- Informações da Livraria --------");
-        System.out.println("Endereço da loja: " + enderecoLoja);
-        System.out.println("Endereço da cep: " + cepLoja);
-    }
-    public Produto buscarProduto(String nomeBuscado){
-        for(Produto p: produto){
-            if(p.getNome() == nomeBuscado){
-                return p;
-            }
 
+    public Produto buscarProdutoPorNome(String nomeBuscado) {
+        for (Produto p : produto) {
+            if (p.getNome().equalsIgnoreCase(nomeBuscado))
+                return p;
         }
         return null;
     }
-    public void vender(){
-        if(produto.isEmpty()){
-            System.out.println("");
+    public Produto buscarProdutoPorCodBarra(String codigoDeBarrasBuscado) {
+
+        for (Produto p: produto) {
+            if(p.getCodigoDeBarras().equalsIgnoreCase(codigoDeBarrasBuscado))
+                return p;
         }
+        return null;
     }
+
     
     
     

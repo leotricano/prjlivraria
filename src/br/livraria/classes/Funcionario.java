@@ -22,7 +22,6 @@ public class Funcionario {
     public Funcionario(String nome, Funcao funcao, double salario, int matricula) {
         this.nome = nome;
         this.funcao = funcao;
-        this.salario = salario;
         this.matricula = matricula;
     }
 
@@ -40,14 +39,6 @@ public class Funcionario {
 
     public void setMatricula(int matricula) {
         this.matricula = matricula;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
     }
 
     public Funcao getFuncao() {

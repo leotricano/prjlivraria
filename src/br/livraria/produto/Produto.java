@@ -9,11 +9,12 @@ package br.livraria.produto;
  * @author USER_ADM
  */
 public class Produto {
-    private String nome;
+    private String nome, codigoDeBarras, id;
     private double preco;
-    private int codigoDeBarras, id, qtdEstoque;
+    private int qtdEstoque;
 
-    public Produto(String nome, double preco, int codigoDeBarras, int id, int qtdEstoque) {
+
+    public Produto(String nome, double preco, String codigoDeBarras, String id, int qtdEstoque) {
         this.nome = nome;
         this.preco = preco;
         this.codigoDeBarras = codigoDeBarras;
@@ -37,19 +38,19 @@ public class Produto {
         this.preco = preco;
     }
 
-    public int getCodigoDeBarras() {
+    public String getCodigoDeBarras() {
         return codigoDeBarras;
     }
 
-    public void setCodigoDeBarras(int codigoDeBarras) {
+    public void setCodigoDeBarras(String codigoDeBarras) {
         this.codigoDeBarras = codigoDeBarras;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -64,6 +65,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return " Nome: " + this.getNome() + " Preço: " + getPreco() + " Estoque: " + getQtdEstoque();
+        return " Nome: " + this.getNome() + " Preço: " + getPreco();
     }
 }
