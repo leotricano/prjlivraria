@@ -33,6 +33,25 @@ public class CarrinhoDeCompras {
         }
 
     }
+
+    public void remover(Produto p, int quantidade){
+        if(quantidade > itens.size() || quantidade < 0){
+            System.out.println("Erro");
+        }else {
+            itens.remove(p);
+
+        }
+    }
+    public void incrementarUnidade(Produto p){
+        long jaNoCarrinho = this.itens.stream()
+                .filter(item -> item.equals(p))
+                .count();
+        if (jaNoCarrinho + 1 > p.getQtdEstoque()){
+            System.out.println("Atingiu limite do estoque");
+        }else {
+            this.adicionar(p, 1);
+        }
+    }
     public void mostrarCarrinho(){
         System.out.println("--- ITENS NO CARRINHO ---");
         this.itens.stream().forEach(p -> System.out.println(p.getNome() + " | R$ " + p.getPreco()));
