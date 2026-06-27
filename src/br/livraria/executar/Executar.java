@@ -36,6 +36,10 @@ public class Executar {
         leitura.imprimirLoja();
         leitura.listarProdutos();
         carrinhoDeCompras.mostrarCarrinho();
+        carrinhoDeCompras.remover(narnia, 10);
+        carrinhoDeCompras.mostrarCarrinho();
+
+        carrinhoDeCompras.removerUnidade(narnia);
 
     }
     
