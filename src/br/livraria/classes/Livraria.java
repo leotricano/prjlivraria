@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class Livraria {
     private String enderecoLoja;
     private int cepLoja;
+    private double caixa;
     private ArrayList<Produto> produto;
     private ArrayList<Cliente> cliente;
     private ArrayList<Venda> venda;
@@ -40,9 +41,18 @@ public class Livraria {
         return cepLoja;
     }
 
+    public double getCaixa() {
+        return caixa;
+    }
+
+    public void setCaixa(double caixa) {
+        this.caixa = caixa;
+    }
+
     public void cadastrarProduto(Produto produto){
         this.produto.add(produto);
     }
+
 //-------------------------------------------------------------------------------------------------------------------------
 public void imprimirLoja(){
     System.out.println("------- Informações da Livraria --------");
@@ -87,7 +97,10 @@ public void imprimirLoja(){
         return null;
     }
 
-    
+    public void depositarNoCaixa (double valor){
+    caixa = caixa + valor;
+
+    }
     
     
 }

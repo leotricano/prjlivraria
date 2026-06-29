@@ -7,6 +7,7 @@ package br.livraria.classes;
 import br.livraria.produto.Produto;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -18,12 +19,11 @@ public class Venda {
     private Date dataDaVenda;
     private double valorTotal;
 
-    public Venda(Cliente cliente, ArrayList<Produto> itensComprados,
-            Date dataDaVenda, double valorTotal) {
+    public Venda(Cliente cliente) {
         this.cliente = cliente;
-        this.itensComprados = itensComprados;
-        this.dataDaVenda = dataDaVenda;
-        this.valorTotal = valorTotal;
+
+
+
     }
 
     public Cliente getCliente() {
@@ -60,12 +60,15 @@ public class Venda {
         this.valorTotal = valorTotal;
     }
 
-    public void finalizarVenda(CarrinhoDeCompras produtos){
+    public void finalizarVenda(CarrinhoDeCompras produtos, Livraria livraria){
+        Scanner leitor =  new Scanner(System.in);
         double total = 0.0;
+        double dinheiroCliente = 0.0;
+
        if(produtos.getCarrinho().size() <= 0){
            System.out.println("Carrinho vazio");
        }else {
-           System.out.println("Pagamento: ");
+           System.out.println("Processando pagamento... ");
            produtos.getCarrinho()
                    .stream()
                    .forEach(p ->
@@ -77,6 +80,32 @@ public class Venda {
                                            .sum();
 
            System.out.println("Valor Total: " + total);
+           System.out.println("=====================================================================");
+           System.out.println("Digite o valor do seu pagamento: ");
+           dinheiroCliente = leitor.nextDouble();
+           if (dinheiroCliente < total){
+               System.out.println("Pagamento recusado! Dinheiro insuficiente.");
+
+
+           }else if(dinheiroCliente > total) {
+               double troco = 0.0;
+               troco = dinheiroCliente - total;
+               System.out.println("Seu troco é de " + troco);
+
+               System.out.println("Pagamento de " + total + " realizado.");
+
+               livraria.depositarNoCaixa(total);
+               System.out.println("Caixa: " + livraria.getCaixa());
+
+           }
+
+           else {
+
+               System.out.println("Pagamento de " + total + " realizado.");
+
+               livraria.depositarNoCaixa(total);
+               System.out.println("Caixa: " + livraria.getCaixa());
+           }
        }
 
 

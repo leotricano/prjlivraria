@@ -37,11 +37,14 @@ public class Executar {
         leitura.imprimirLoja();
         leitura.listarProdutos();
         carrinhoDeCompras.mostrarCarrinho();
-        carrinhoDeCompras.remover(narnia, 10);
+        carrinhoDeCompras.remover(narnia, 9);
         carrinhoDeCompras.mostrarCarrinho();
 
-        carrinhoDeCompras.removerUnidade(narnia);
-        Venda venda = new Venda();
+
+
+
+        Venda venda = new Venda(leo);
+        venda.finalizarVenda(carrinhoDeCompras, leitura);
     }
     
 }
