@@ -60,7 +60,25 @@ public class Venda {
         this.valorTotal = valorTotal;
     }
 
-    public void Vender(){
+    public void finalizarVenda(CarrinhoDeCompras produtos){
+        double total = 0.0;
+       if(produtos.getCarrinho().size() <= 0){
+           System.out.println("Carrinho vazio");
+       }else {
+           System.out.println("Pagamento: ");
+           produtos.getCarrinho()
+                   .stream()
+                   .forEach(p ->
+                           System.out.println("Produto: " + p.getNome() +
+                           "Valor: " + p.getPreco()));
+           total = produtos.getCarrinho()
+                           .stream()
+                                   .mapToDouble(p -> p.getPreco())
+                                           .sum();
+
+           System.out.println("Valor Total: " + total);
+       }
+
 
 
     }

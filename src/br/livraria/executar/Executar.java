@@ -7,6 +7,7 @@ package br.livraria.executar;
 import br.livraria.classes.CarrinhoDeCompras;
 import br.livraria.classes.Cliente;
 import br.livraria.classes.Livraria;
+import br.livraria.classes.Venda;
 import br.livraria.produto.Livro;
 import br.livraria.produto.Produto;
 
@@ -40,7 +41,7 @@ public class Executar {
         carrinhoDeCompras.mostrarCarrinho();
 
         carrinhoDeCompras.removerUnidade(narnia);
-
+        Venda venda = new Venda();
     }
     
 }
